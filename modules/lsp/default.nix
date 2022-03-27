@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ...}:
+{ pkgs, config, lib, ... }:
 with lib;
 with builtins;
 
@@ -6,7 +6,8 @@ let
   cfg = config.vim.lsp;
 
   debugpy = pkgs.python3.withPackages (pyPkg: with pyPkg; [ debugpy ]);
-in {
+in
+{
 
   options.vim.lsp = {
     enable = mkEnableOption "Enable lsp support";
@@ -35,9 +36,13 @@ in {
   };
 
   config = mkIf cfg.enable {
-    vim.startPlugins = with pkgs.neovimPlugins; [ 
-      nvim-lspconfig 
-      completion-nvim 
+    vim.startPlugins = with pkgs.neovimPlugins; [
+      nvim-lspconfig
+      # completion-nvim 
+
+      (if (config.vim.autocomplete.enable && (config.vim.autocomplete.type == "nvim-cmp")) then cmp-nvim-lsp else null)
+      # nvim-cmp
+
       nvim-dap
       (if cfg.nix then vim-nix else null)
       telescope-dap
@@ -95,8 +100,7 @@ in {
       #"<leader>df" = "<cmd>Telescope dap frames<cr>";
     };
 
-    vim.globals = {
-    };
+    vim.globals = { };
 
     vim.luaConfigRC = ''
       local wk = require("which-key")

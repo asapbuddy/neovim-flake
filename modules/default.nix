@@ -13,5 +13,8 @@
     ./formating
     ./editor
     ./test
+
+    ./snippets
+    ./completion
   ];
 }
