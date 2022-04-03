@@ -16,5 +16,6 @@
 
     ./snippets
     ./completion
+    ./visuals
   ];
 }
