@@ -20,7 +20,7 @@ in {
 
   config = {
     vim.startPlugins = with pkgs.neovimPlugins; [ 
-      (if cfg.indentGuide then indent-blankline-nvim else null)
+      (if cfg.indentGuide then indent-blankline else null)
       (if cfg.indentGuide then indentline else null)
       (if cfg.underlineCurrentWord then vim-cursorword else null)
       # Currently broken. Need to add a build step

@@ -28,7 +28,7 @@
     telescope-dap = { url = "github:nvim-telescope/telescope-dap.nvim"; flake = false; };
     popup-nvim = { url = "github:nvim-lua/popup.nvim"; flake = false; };
     plenary-nvim = { url = "github:nvim-lua/plenary.nvim"; flake = false; };
-    nvim-web-devicons = { url = "github:kyazdani42/nvim-web-devicons"; flake = false; };
+
     nvim-tree-lua = { url = "github:kyazdani42/nvim-tree.lua"; flake = false; };
     vimagit = { url = "github:jreybert/vimagit"; flake = false; };
     fugitive = { url = "github:tpope/vim-fugitive"; flake = false; };
@@ -37,7 +37,6 @@
     nvim-treesitter-context = { url = "github:romgrk/nvim-treesitter-context"; flake = false; };
     editorconfig-vim = { url = "github:editorconfig/editorconfig-vim"; flake = false; };
     indentline = { url = "github:Yggdroot/indentLine"; flake = false; };
-    indent-blankline-nvim = { url = "github:lukas-reineke/indent-blankline.nvim"; flake = false; };
     nvim-blame-line = { url = "github:tveskag/nvim-blame-line"; flake = false; };
     nvim-dap-virtual-text = { url = "github:theHamsta/nvim-dap-virtual-text"; flake = false; };
     vim-cursorword = { url = "github:itchyny/vim-cursorword"; flake = false; };
@@ -79,6 +78,44 @@
       url = "github:hrsh7th/vim-vsnip";
       flake = false;
     };
+
+
+
+    # Visuals
+    nvim-cursorline = {
+      url = "github:yamatsum/nvim-cursorline";
+      flake = false;
+    };
+    indent-blankline = {
+      url = "github:lukas-reineke/indent-blankline.nvim";
+      flake = false;
+    };
+    nvim-web-devicons = {
+      url = "github:kyazdani42/nvim-web-devicons";
+      flake = false;
+    };
+    gitsigns-nvim = {
+      url = "github:lewis6991/gitsigns.nvim";
+      flake = false;
+    };
+
+
+    lspkind = {
+      url = "github:onsails/lspkind-nvim";
+      flake = false;
+    };
+
+    # Autopairs
+    nvim-autopairs = {
+      url = "github:windwp/nvim-autopairs";
+      flake = false;
+    };
+    nvim-ts-autotag = {
+      url = "github:windwp/nvim-ts-autotag";
+      flake = false;
+    };
+
+
   };
 
   outputs = { self, nixpkgs, neovim, rnix-lsp, ... }@inputs:
@@ -104,7 +141,7 @@
         "nvim-treesitter"
         "nvim-treesitter-context"
         "editorconfig-vim"
-        "indent-blankline-nvim"
+        "indent-blankline"
         "indentline"
         "nvim-blame-line"
         "nvim-dap-virtual-text"
@@ -121,6 +158,14 @@
         "cmp-vsnip"
         "cmp-path"
         "cmp-treesitter"
+
+        "lspkind"
+
+
+        "nvim-cursorline"
+
+
+        "nvim-autopairs"
       ];
 
       externalBitsOverlay = top: last: {
@@ -191,6 +236,7 @@
           vim.editor.underlineCurrentWord = true;
           vim.test.enable = true;
 
+          vim.autopairs.enable = true;
           vim.autocomplete = {
             enable = true;
             type = "nvim-cmp";

@@ -143,6 +143,22 @@
         "type": "github"
       }
     },
+    "gitsigns-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1648922715,
+        "narHash": "sha256-9++DoH1AiHuyv8N5aQ3Xob8bKiswWQfgISfxkK2ZP8M=",
+        "owner": "lewis6991",
+        "repo": "gitsigns.nvim",
+        "rev": "83ab3ca26ff5038f823060dfddda7a053e579b67",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lewis6991",
+        "repo": "gitsigns.nvim",
+        "type": "github"
+      }
+    },
     "gruvbox": {
       "flake": false,
       "locked": {
@@ -159,14 +175,14 @@
         "type": "github"
       }
     },
-    "indent-blankline-nvim": {
+    "indent-blankline": {
       "flake": false,
       "locked": {
-        "lastModified": 1642829036,
-        "narHash": "sha256-ik7GDbctby+fzk+TX2A3NQNN7zq2smOxDcEeWsc88sE=",
+        "lastModified": 1648432344,
+        "narHash": "sha256-HZVbLOZ/eKt2bp0QtNg25szuV2/yw3ZiCRwlKU6zmJc=",
         "owner": "lukas-reineke",
         "repo": "indent-blankline.nvim",
-        "rev": "2e35f7dcdc72f39b37c21e43cdb538d7a41c7e07",
+        "rev": "9920ceb79bffd0e6b7064be63439e38da0741d03",
         "type": "github"
       },
       "original": {
@@ -204,6 +220,22 @@
       "original": {
         "owner": "itchyny",
         "repo": "lightline.vim",
+        "type": "github"
+      }
+    },
+    "lspkind": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1644054955,
+        "narHash": "sha256-0103K5lnzWCyuT/qwiBUo5PJ7lUX7fo+zNeEnQClI7A=",
+        "owner": "onsails",
+        "repo": "lspkind-nvim",
+        "rev": "93e98a0c900327ce7e9be1cbf24aebbe7170e375",
+        "type": "github"
+      },
+      "original": {
+        "owner": "onsails",
+        "repo": "lspkind-nvim",
         "type": "github"
       }
     },
@@ -310,6 +342,22 @@
         "type": "github"
       }
     },
+    "nvim-autopairs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1648883443,
+        "narHash": "sha256-5OPDNjaCo9O1FnTddkHJLrbIAEg5gFwdKkzocdU2MYo=",
+        "owner": "windwp",
+        "repo": "nvim-autopairs",
+        "rev": "06535b1f1aefc98df464d180efa693bb696736c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "windwp",
+        "repo": "nvim-autopairs",
+        "type": "github"
+      }
+    },
     "nvim-blame-line": {
       "flake": false,
       "locked": {
@@ -355,6 +403,22 @@
       "original": {
         "owner": "hrsh7th",
         "repo": "nvim-compe",
+        "type": "github"
+      }
+    },
+    "nvim-cursorline": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1642861937,
+        "narHash": "sha256-QBPzrwjiAJrO2tOQR68VmLpVbzY7hXyglwnPwSZ37NE=",
+        "owner": "yamatsum",
+        "repo": "nvim-cursorline",
+        "rev": "88232dd52f186e3bff9aa594aa9c3a062f400642",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yamatsum",
+        "repo": "nvim-cursorline",
         "type": "github"
       }
     },
@@ -486,6 +550,22 @@
         "type": "github"
       }
     },
+    "nvim-ts-autotag": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1646385778,
+        "narHash": "sha256-gYm8/MLCBBhrH1vSrBxK33wOtG5CYaXJWn9N5e4a0hk=",
+        "owner": "windwp",
+        "repo": "nvim-ts-autotag",
+        "rev": "57035b5814f343bc6110676c9ae2eacfcd5340c2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "windwp",
+        "repo": "nvim-ts-autotag",
+        "type": "github"
+      }
+    },
     "nvim-web-devicons": {
       "flake": false,
       "locked": {
@@ -580,16 +660,20 @@
         "completion-nvim": "completion-nvim",
         "editorconfig-vim": "editorconfig-vim",
         "fugitive": "fugitive",
+        "gitsigns-nvim": "gitsigns-nvim",
         "gruvbox": "gruvbox",
-        "indent-blankline-nvim": "indent-blankline-nvim",
+        "indent-blankline": "indent-blankline",
         "indentline": "indentline",
         "lightline-vim": "lightline-vim",
+        "lspkind": "lspkind",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
         "nord-vim": "nord-vim",
+        "nvim-autopairs": "nvim-autopairs",
         "nvim-blame-line": "nvim-blame-line",
         "nvim-cmp": "nvim-cmp",
         "nvim-compe": "nvim-compe",
+        "nvim-cursorline": "nvim-cursorline",
         "nvim-dap": "nvim-dap",
         "nvim-dap-virtual-text": "nvim-dap-virtual-text",
         "nvim-lightbulb": "nvim-lightbulb",
@@ -598,6 +682,7 @@
         "nvim-tree-lua": "nvim-tree-lua",
         "nvim-treesitter": "nvim-treesitter",
         "nvim-treesitter-context": "nvim-treesitter-context",
+        "nvim-ts-autotag": "nvim-ts-autotag",
         "nvim-web-devicons": "nvim-web-devicons",
         "nvim-which-key": "nvim-which-key",
         "plenary-nvim": "plenary-nvim",
