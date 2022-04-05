@@ -129,6 +129,7 @@ in
 
       local lspconfig = require'lspconfig'
       local dap = require'dap'
+      local capabilities = require'cmp_nvim_lsp'.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
       --Tree sitter config
       require('nvim-treesitter.configs').setup {
@@ -186,16 +187,19 @@ in
 
       '' else ""}
 
+
       ${if cfg.bash then ''
         lspconfig.bashls.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {"${pkgs.nodePackages.bash-language-server}/bin/bash-language-server", "start"}
         }
       '' else ""}
 
       ${if cfg.go then ''
         lspconfig.gopls.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {"${pkgs.gopls}/bin/gopls"}
         } 
 
@@ -248,63 +252,72 @@ in
 
       ${if cfg.nix then ''
         lspconfig.rnix.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {"${pkgs.rnix-lsp}/bin/rnix-lsp"}
         }
       '' else ""}
 
       ${if cfg.ruby then ''
         lspconfig.solargraph.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {'${pkgs.solargraph}/bin/solargraph', 'stdio'}
         }
       '' else ""}
 
       ${if cfg.rust then ''
         lspconfig.rust_analyzer.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {'${pkgs.rust-analyzer}/bin/rust-analyzer'}
         }
       '' else ""}
 
       ${if cfg.terraform then ''
         lspconfig.terraformls.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {'${pkgs.terraform-ls}/bin/terraform-ls', 'serve' }
         }
       '' else ""}
 
       ${if cfg.typescript then ''
         lspconfig.tsserver.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {'${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server', '--stdio' }
         }
       '' else ""}
 
       ${if cfg.vimscript then ''
         lspconfig.vimls.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {'${pkgs.nodePackages.vim-language-server}/bin/vim-language-server', '--stdio' }
         }
       '' else ""}
 
       ${if cfg.yaml then ''
         lspconfig.vimls.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {'${pkgs.nodePackages.yaml-language-server}/bin/yaml-language-server', '--stdio' }
         }
       '' else ""}
 
       ${if cfg.docker then ''
         lspconfig.dockerls.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {'${pkgs.nodePackages.dockerfile-language-server-nodejs}/bin/docker-language-server', '--stdio' }
         }
       '' else ""}
 
       ${if cfg.css then ''
         lspconfig.cssls.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {'${pkgs.nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver', '--stdio' };
           filetypes = { "css", "scss", "less" }; 
         }
@@ -312,7 +325,8 @@ in
 
       ${if cfg.html then ''
         lspconfig.html.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {'${pkgs.nodePackages.vscode-html-languageserver-bin}/bin/html-languageserver', '--stdio' };
           filetypes = { "html", "css", "javascript" }; 
         }
@@ -320,7 +334,8 @@ in
 
       ${if cfg.json then ''
         lspconfig.jsonls.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {'${pkgs.nodePackages.vscode-json-languageserver-bin}/bin/json-languageserver', '--stdio' };
           filetypes = { "html", "css", "javascript" }; 
         }
@@ -328,14 +343,16 @@ in
 
       ${if cfg.tex then ''
         lspconfig.texlab.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {'${pkgs.texlab}/bin/texlab'}
         }
       '' else ""}
 
       ${if cfg.clang then ''
         lspconfig.clangd.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {'${pkgs.clang-tools}/bin/clangd', '--background-index'};
           filetypes = { "c", "cpp", "objc", "objcpp" };
         }
@@ -343,7 +360,8 @@ in
 
       ${if cfg.cmake then ''
         lspconfig.cmake.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {'${pkgs.cmake-language-server}/bin/cmake-language-server'};
           filetypes = { "cmake"};
         }
@@ -351,7 +369,8 @@ in
 
       ${if cfg.python then ''
         lspconfig.pyright.setup{
-          on_attach=require'completion'.on_attach;
+          --on_attach=require'completion'.on_attach;
+          capabilities = capabilities;
           cmd = {"${pkgs.nodePackages.pyright}/bin/pyright-langserver", "--stdio"}
         }
 

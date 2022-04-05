@@ -18,9 +18,7 @@
     vim-startify = { url = "github:mhinz/vim-startify"; flake = false; };
     lightline-vim = { url = "github:itchyny/lightline.vim"; flake = false; };
     nvim-lspconfig = { url = "github:neovim/nvim-lspconfig"; flake = false; };
-    completion-nvim = { url = "github:nvim-lua/completion-nvim"; flake = false; };
-
-    # nvim-cmp = { url = "github:hrsh7th/nvim-cmp"; flake = false; };
+    # completion-nvim = { url = "github:nvim-lua/completion-nvim"; flake = false; };
 
     vim-nix = { url = "github:LnL7/vim-nix"; flake = false; };
     nvim-dap = { url = "github:mfussenegger/nvim-dap"; flake = false; };
@@ -126,7 +124,7 @@
         "vim-startify"
         "lightline-vim"
         "nvim-lspconfig"
-        "completion-nvim"
+        # "completion-nvim"
         "vim-nix"
         "nvim-dap"
         "nvim-telescope"

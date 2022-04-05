@@ -17,5 +17,6 @@
     ./snippets
     ./completion
     ./visuals
+    ./autopairs
   ];
 }
