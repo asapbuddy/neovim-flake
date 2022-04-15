@@ -270,8 +270,7 @@ in
         lspconfig.rust_analyzer.setup{
           --on_attach=require'completion'.on_attach;
           capabilities = capabilities;
-          -- cmd = {'${pkgs.rust-analyzer}/bin/rust-analyzer'}
-          cmd = {'~/.nix-profile/bin/rust-analyzer'}
+          cmd = {'${pkgs.rust-analyzer}/bin/rust-analyzer'}
         }
       '' else ""}
 
