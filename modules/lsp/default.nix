@@ -76,8 +76,8 @@ in
 
       "<leader>cd" = "<cmd>lua require'telescope.builtin'.lsp_definitions()<cr>";
       "<leader>ci" = "<cmd>lua require'telescope.builtin'.lsp_implementations()<cr>";
-      #"<leader>e" = "<cmd>lua require'telescope.builtin'.lsp_document_diagnostics()<cr>";
-      #"<leader>E" = "<cmd>lua require'telescope.builtin'.lsp_workspace_diagnostics()<cr>";
+      # "<leader>e" = "<cmd>lua require'telescope.builtin'.lsp_document_diagnostics()<cr>";
+      # "<leader>E" = "<cmd>lua require'telescope.builtin'.lsp_workspace_diagnostics()<cr>";
       "<leader>cf" = "<cmd>lua vim.lsp.buf.formatting()<CR>";
       "<leader>ck" = "<cmd>lua vim.lsp.buf.signature_help()<CR>";
       #"<leader>K" = "<cmd>lua vim.lsp.buf.hover()<CR>";
@@ -93,6 +93,7 @@ in
       "<leader>dc" = "<cmd>lua require'dap'.continue()<cr>";
       "<leader>db" = "<cmd>lua require'dap'.toggle_breakpoint()<cr>";
       "<leader>dr" = "<cmd>lua require'dap'.repl.open()<cr>";
+
 
       #"<leader>d" = "<cmd>Telescope dap commands<cr>";
       #"<leader>B" = "<cmd>Telescope dap list_breakpoints<cr>";
@@ -270,7 +271,21 @@ in
         lspconfig.rust_analyzer.setup{
           --on_attach=require'completion'.on_attach;
           capabilities = capabilities;
-          cmd = {'${pkgs.rust-analyzer}/bin/rust-analyzer'}
+          cmd = {'${pkgs.rust-analyzer}/bin/rust-analyzer'};
+          settings = {
+            -- to enable rust-analyzer settings visit:
+            -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+            experimental = {
+              procAttrMacros = true,
+            },
+            ["rust-analyzer"] = {
+                -- enable clippy on save
+                checkOnSave = {
+                    enable = true,
+                    command = "clippy",
+                },
+              }
+            }
         }
       '' else ""}
 

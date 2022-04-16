@@ -166,6 +166,8 @@ in {
       set tm=${toString cfg.mapTimeout}
       set hidden
 
+      nnoremap <silent><c-s> :<c-u>update<cr>
+
       ${writeIf cfg.splitBelow ''
         set splitbelow
       ''}
