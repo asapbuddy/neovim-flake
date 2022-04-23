@@ -22,6 +22,7 @@
 
     # my
     vim-surround = { url = "github:tpope/vim-surround"; flake = false; };
+    rust-tools = { url = "github:simrat39/rust-tools.nvim"; flake = false; };
     # my
 
     vim-nix = { url = "github:LnL7/vim-nix"; flake = false; };
@@ -153,6 +154,7 @@
         "nvim-which-key"
 
 
+
         "nvim-cmp"
         "vim-vsnip"
 
@@ -169,6 +171,8 @@
 
 
         "nvim-autopairs"
+
+        "rust-tools"
       ];
 
       externalBitsOverlay = top: last: {

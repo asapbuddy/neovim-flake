@@ -659,6 +659,7 @@
         "plenary-nvim": "plenary-nvim",
         "popup-nvim": "popup-nvim",
         "rnix-lsp": "rnix-lsp",
+        "rust-tools": "rust-tools",
         "telescope-dap": "telescope-dap",
         "vim-cursorword": "vim-cursorword",
         "vim-nix": "vim-nix",
@@ -667,6 +668,22 @@
         "vim-test": "vim-test",
         "vim-vsnip": "vim-vsnip",
         "vimagit": "vimagit"
+      }
+    },
+    "rust-tools": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1648260743,
+        "narHash": "sha256-MDzm3Ulkpyt/F4/gUvWfUevWhci/7RD9LZ4yKnM4M2Q=",
+        "owner": "simrat39",
+        "repo": "rust-tools.nvim",
+        "rev": "9f89fe6d9762ef89973bbb698c750dd21b94ec44",
+        "type": "github"
+      },
+      "original": {
+        "owner": "simrat39",
+        "repo": "rust-tools.nvim",
+        "type": "github"
       }
     },
     "telescope-dap": {
