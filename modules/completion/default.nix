@@ -30,6 +30,7 @@ in
         (if cfg.type == "nvim-compe" then [ nvim-compe ] else [ ])
         ++ (if cfg.type == "nvim-cmp" then [
           nvim-cmp
+          cmp-nvim-lsp
           cmp-buffer
           cmp-vsnip
           cmp-path
@@ -49,7 +50,8 @@ in
         )
       );
 
-      vim.configRC = writeIf (cfg.type == "nvim-compe") ''
+      # vim.configRC = writeIf (cfg.type == "nvim-compe") ''
+      vim.configRC = ''
         set completeopt=menuone,noselect
       '';
 
@@ -166,7 +168,7 @@ in
               ['<CR>'] = cmp.mapping.confirm({
                 select = true,
               }),
-              ['<Tab>'] = cmp.mapping(function (fallback)
+              ['<C-n>'] = cmp.mapping(function (fallback)
                 if cmp.visible() then
                   cmp.select_next_item()
                 elseif vim.fn['vsnip#available'](1) == 1 then
@@ -178,7 +180,7 @@ in
                 end
               end, { 'i', 's' }),
 
-              ['<S-Tab>'] = cmp.mapping(function (fallback)
+              ['<C-p>'] = cmp.mapping(function (fallback)
                 if cmp.visible() then
                   cmp.select_prev_item()
                 elseif vim.fn['vsnip#available'](-1) == 1 then
@@ -187,7 +189,8 @@ in
               end, { 'i', 's' })
             },
             completion = {
-              completeopt = 'menu,menuone,noinsert',
+              -- completeopt = 'menu,menuone,noinsert',
+              completeopt = 'menuone,noselect',
             },
             formatting = {
               format = function(entry, vim_item)
@@ -199,8 +202,8 @@ in
           
                 -- name for each source
                 vim_item.menu = ({
-                  buffer = "[Buffer]",
                   nvim_lsp = "[LSP]",
+                  buffer = "[Buffer]",
                   vsnip = "[VSnip]",
                   crates = "[Crates]",
                   path = "[Path]",

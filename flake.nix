@@ -2,7 +2,7 @@
   description = "Wil Taylor's NeoVim config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
 
     neovim = {
       url = "github:neovim/neovim?dir=contrib";
@@ -19,6 +19,10 @@
     lightline-vim = { url = "github:itchyny/lightline.vim"; flake = false; };
     nvim-lspconfig = { url = "github:neovim/nvim-lspconfig"; flake = false; };
     # completion-nvim = { url = "github:nvim-lua/completion-nvim"; flake = false; };
+
+    # my
+    vim-surround = { url = "github:tpope/vim-surround"; flake = false; };
+    # my
 
     vim-nix = { url = "github:LnL7/vim-nix"; flake = false; };
     nvim-dap = { url = "github:mfussenegger/nvim-dap"; flake = false; };
@@ -124,6 +128,7 @@
         "vim-startify"
         "lightline-vim"
         "nvim-lspconfig"
+        "vim-surround"
         # "completion-nvim"
         "vim-nix"
         "nvim-dap"
