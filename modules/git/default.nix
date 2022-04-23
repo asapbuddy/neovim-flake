@@ -40,11 +40,11 @@ in
     '';
 
 
-    vim.configRC = ''
-      ${if cfg.blameLine then ''
-         autocmd BufEnter * EnableBlameLine
-      '' else ""}
-    '';
+    # vim.configRC = ''
+    #   ${if cfg.blameLine then ''
+    #      autocmd BufEnter * EnableBlameLine
+    #   '' else ""}
+    # '';
   };
 }
 

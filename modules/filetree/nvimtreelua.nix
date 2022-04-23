@@ -138,7 +138,7 @@ in {
           enable = true,
           auto_open = ${toString cfg.openOnDirectoryStart},
         },
-        auto_close          = ${toString cfg.closeOnLastWindow},
+        auto_close          = false,
         open_on_tab         = false,
         hijack_cursor       = false,
         update_cwd          = false,
