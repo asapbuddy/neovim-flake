@@ -323,9 +323,16 @@ in
 
             ${if cfg.typescript then ''
               lspconfig.tsserver.setup{
+              
                 --on_attach=require'completion'.on_attach;
                 capabilities = capabilities;
                 cmd = {'${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server', '--stdio' }
+              }
+               lspconfig.vuels.setup{
+              
+                --on_attach=require'completion'.on_attach;
+                capabilities = capabilities;
+                cmd = {'${pkgs.nodePackages.vue-language-server}/bin/vue-language-server', '--stdio' }
               }
             '' else ""}
 
