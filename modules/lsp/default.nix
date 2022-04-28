@@ -332,7 +332,7 @@ in
               
                 --on_attach=require'completion'.on_attach;
                 capabilities = capabilities;
-                cmd = {'${pkgs.nodePackages.vue-language-server}/bin/vue-language-server', '--stdio' }
+                cmd = {'${pkgs.nodePackages.vls}/bin/vls' }
               }
             '' else ""}
 
