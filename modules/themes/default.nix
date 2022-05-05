@@ -3,5 +3,6 @@
   imports = [ 
     ./gruvbox.nix 
     ./nord.nix
+    ./onedark.nix
   ];
 }
