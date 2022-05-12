@@ -75,7 +75,7 @@ in
       "<leader>cr" = "<cmd>lua require'telescope.builtin'.lsp_references()<CR>";
       "<leader>ca" = "<cmd>lua require'telescope.builtin'.lsp_code_actions()<CR>";
 
-      "<leader>v" = "<cmd>lua require'telescope.builtin'.treesitter()<CR>";
+      "<leader>v" = "<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<CR>";
 
       "<leader>cd" = "<cmd>lua require'telescope.builtin'.lsp_definitions()<cr>";
       "<leader>ci" = "<cmd>lua require'telescope.builtin'.lsp_implementations()<cr>";
@@ -108,6 +108,8 @@ in
     vim.luaConfigRC = ''
             local wk = require("which-key")
             wk.register({
+              e = {"Diagnostics"},
+              v = {"Symbols"},
               c = {
                 name = "Code",
                 a = {"Code Action"},
