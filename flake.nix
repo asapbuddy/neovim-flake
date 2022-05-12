@@ -216,8 +216,8 @@
           vim.dashboard.startify.enable = true;
           vim.dashboard.startify.customHeader = [ "NIXOS NEOVIM CONFIG" ];
           # vim.theme.nord.enable = true;
-          # vim.theme.gruvbox.enable = true;
-          vim.theme.onedark.enable = true;
+          vim.theme.gruvbox.enable = true;
+          # vim.theme.onedark.enable = true;
           vim.disableArrows = true;
           vim.statusline.lightline.enable = true;
           vim.lsp.enable = true;
