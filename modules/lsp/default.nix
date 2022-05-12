@@ -75,10 +75,11 @@ in
       "<leader>cr" = "<cmd>lua require'telescope.builtin'.lsp_references()<CR>";
       "<leader>ca" = "<cmd>lua require'telescope.builtin'.lsp_code_actions()<CR>";
 
+      "<leader>v" = "<cmd>lua require'telescope.builtin'.treesitter()<CR>";
+
       "<leader>cd" = "<cmd>lua require'telescope.builtin'.lsp_definitions()<cr>";
       "<leader>ci" = "<cmd>lua require'telescope.builtin'.lsp_implementations()<cr>";
-      "<leader>e" = "<cmd>lua require'telescope.builtin'.lsp_document_diagnostics()<cr>";
-      "<leader>E" = "<cmd>lua require'telescope.builtin'.lsp_workspace_diagnostics()<cr>";
+      "<leader>e" = "<cmd>lua require'telescope.builtin'.diagnostics()<cr>";
       "<leader>cf" = "<cmd>lua vim.lsp.buf.formatting()<CR>";
       "<leader>ck" = "<cmd>lua vim.lsp.buf.signature_help()<CR>";
       "<leader>K" = "<cmd>lua vim.lsp.buf.hover()<CR>";
@@ -133,13 +134,13 @@ in
             local dap = require'dap'
             local capabilities = require'cmp_nvim_lsp'.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-            vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-            vim.lsp.diagnostic.on_publish_diagnostics, {
-              virtual_text = false,
-              signs = true,
-              update_in_insert = true,
-            }
-          )
+            -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+            -- vim.lsp.diagnostic.on_publish_diagnostics, {
+            --   virtual_text = false,
+            --   signs = true,
+            --   update_in_insert = true,
+            -- }
+            -- )
 
             --Tree sitter config
             require('nvim-treesitter.configs').setup {
