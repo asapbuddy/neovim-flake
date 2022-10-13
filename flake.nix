@@ -284,11 +284,6 @@
           };
         });
 
-      defaultApp = lib.withDefaultSystems (sys: {
-        type = "app";
-        program = "${self.defaultPackage."${sys}"}/bin/nvim";
-      });
-
       defaultPackage = lib.withDefaultSystems (sys: self.packages."${sys}".neovimWT);
 
       packages = lib.withDefaultSystems (sys: {
