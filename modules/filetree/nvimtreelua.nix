@@ -130,7 +130,7 @@ in {
 
 
       require'nvim-tree'.setup {
-        disable_netrw       = ${toString cfg.disableNetRW},
+        disable_netrw       = true,
         hijack_netrw        = true,
         open_on_setup       = false,
         ignore_ft_on_setup  = {},
