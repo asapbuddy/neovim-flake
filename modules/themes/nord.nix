@@ -35,7 +35,7 @@ in {
 
 
     bold = mkOption {
-      default = true;
+      default = false;
       description = "Enable bold text";
       type = types.bool;
     };

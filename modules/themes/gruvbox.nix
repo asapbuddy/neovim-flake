@@ -14,7 +14,7 @@ in {
     enable = mkEnableOption "Enable gruvbox theme";
 
     bold = mkOption {
-      default = true;
+      default = false;
       description = "Enable bold text";
       type = types.bool;
     };
@@ -92,7 +92,7 @@ in {
     };
 
     italicComments = mkOption {
-      default = true;
+      default = false;
       description = "Enable italics for comments";
       type = types.bool;
     };
@@ -151,7 +151,7 @@ in {
 
     vim.startPlugins = with pkgs.neovimPlugins; [gruvbox];
     vim.globals = {
-      "gruvbox_bold" = mkVimBool cfg.bold;
+      "gruvbox_bold" = 0;
       "gruvbox_italic" = mkVimBool cfg.italic;
       "gruvbox_transparent_bg" = mkVimBool cfg.transparentBackground;
       "gruvbox_underline" = mkVimBool cfg.underline;
