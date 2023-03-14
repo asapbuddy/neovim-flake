@@ -290,6 +290,7 @@ in
               autoSetHints = true,
               -- hover_with_actions = true,
               inlay_hints = {
+                  locationLinks = false,
                   show_parameter_hints = false,
                   parameter_hints_prefix = "",
                   other_hints_prefix = "",
@@ -317,6 +318,7 @@ on_attach = function(_, bufnr)
                           enable =true,
                           command = "clippy"
                       },
+                      inlayHints = { locationLinks = false },
                   }
               }
           },
