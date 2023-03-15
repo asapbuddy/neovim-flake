@@ -21,19 +21,19 @@ in {
     };
 
     treeWidth = mkOption {
-      default = 30;
+      default = 40;
       description = "Width of the tree in charecters";
       type = types.int;
     };
 
     hideFiles = mkOption {
-      default = [ ".git" "node_modules" ".cache" ];
+      default = [ ".git" "node_modules" ".cache" "." "target" ];
       description = "Files to hide in the file view by default";
       type = with types; listOf str;
     };
 
     hideIgnoredGitFiles = mkOption {
-      default = false;
+      default = true;
       description = "Hide files ignored by git";
       type = types.bool;
     };
@@ -51,7 +51,7 @@ in {
     };
 
     ignoreFileTypes = mkOption {
-      default = [ "startify" ];
+      default = [ "startify" "." ];
       description = "Ignore file types";
       type = with types; listOf str;
     };
