@@ -2,10 +2,10 @@
   description = "Wil Taylor's NeoVim config";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-23.11";
 
     neovim = {
-      url = "github:neovim/neovim?dir=contrib";
+      url = "git+ssh://git@github.com/neovim/neovim?dir=contrib&ref=release-0.9";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -187,7 +187,7 @@
 
       pluginOverlay = top: last:
         let
-          buildPlug = name: top.vimUtils.buildVimPluginFrom2Nix {
+          buildPlug = name: top.vimUtils.buildVimPlugin {
             pname = name;
             version = "master";
             src = builtins.getAttr name inputs;
